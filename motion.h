@@ -234,6 +234,9 @@ struct images;
 #define IMAGE_PRECAP    16
 #define IMAGE_POSTCAP   32
 
+/* How many frames to ignore after a lightswitch even is triggered */
+#define LIGHTSWITCH_FRAMES 20
+
 struct image_data {
     unsigned char *image;
     int diffs;

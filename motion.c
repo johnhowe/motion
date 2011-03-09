@@ -1523,8 +1523,8 @@ static void *motion_loop(void *arg)
                         if (alg_lightswitch(cnt, cnt->current_image->diffs)) {
                             MOTION_LOG(INF, TYPE_ALL, NO_ERRNO, "%s: Lightswitch detected"); 
 
-                            if (cnt->moved < 5)
-                                cnt->moved = 5;
+                            if (cnt->moved < LIGHTSWITCH_FRAMES)
+                                cnt->moved = LIGHTSWITCH_FRAMES;
 
                             cnt->current_image->diffs = 0;
                             alg_update_reference_frame(cnt, RESET_REF_FRAME);
